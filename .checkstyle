@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<fileset-config file-format-version="1.2.0" simple-config="false">
+  <local-check-config name="youthen" location="src/misc/eclipse/checkstyle.xml" type="project" description="">
+    <property name="charset" value="UTF-8"/>
+    <additional-data name="protect-config-file" value="false"/>
+  </local-check-config>
+  <local-check-config name="youthen-checks" location="src/misc/java/youthen-checks.xml" type="project" description="">
+    <additional-data name="protect-config-file" value="false"/>
+  </local-check-config>
+  <fileset name="すべて" enabled="false" check-config-name="youthen" local="true">
+    <file-match-pattern match-pattern="." include-pattern="true"/>
+  </fileset>
+  <fileset name="excludeTest" enabled="false" check-config-name="youthen" local="true">
+    <file-match-pattern match-pattern=".java$" include-pattern="true"/>
+    <file-match-pattern match-pattern="^src/test" include-pattern="false"/>
+  </fileset>
+  <fileset name="prochip-checks" enabled="true" check-config-name="youthen-checks" local="true">
+    <file-match-pattern match-pattern="src/main/.*.java$" include-pattern="true"/>
+    <file-match-pattern match-pattern="src/test/.*.java$" include-pattern="true"/>
+  </fileset>
+  <filter name="WriteProtectedFiles" enabled="true"/>
+  <filter name="FilesFromPackage" enabled="true">
+    <filter-data value="src/main/resources"/>
+    <filter-data value="src/test/java"/>
+    <filter-data value="src/test/resources"/>
+    <filter-data value="src/main/config"/>
+    <filter-data value="src/test/config"/>
+  </filter>
+  <filter name="NonSrcDirs" enabled="true"/>
+</fileset-config>

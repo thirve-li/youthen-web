@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:sec="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="
+    http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+    http://www.springframework.org/schema/tx
+    http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
+	http://www.springframework.org/schema/security
+    http://www.springframework.org/schema/security/spring-security-3.2.xsd    
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-3.2.xsd
+    http://www.springframework.org/schema/aop
+    http://www.springframework.org/schema/aop/spring-aop-3.2.xsd"
+	default-lazy-init="true">
+    
+	<!-- Annotation -->
+	<context:annotation-config />
+	<import resource="classpath:applicationContext-security.xml" />
+	<import resource="classpath:applicationContext-framework.xml" />
+	<import resource="classpath:applicationContext-master.xml" />
+
+
+	<!-- component-scan -->
+    <bean id="propertyBean"
+        class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+        <property name="locations">
+            <list>
+                <value>classpath:setting.properties</value>
+            </list>
+        </property>
+    </bean>
+
+ 
+	<bean id="dsConf"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:jdbc-test.properties</value>
+                <value>classpath:smtp-test.properties</value>
+				<value>classpath:logging.properties</value>
+			</list>
+		</property>
+	</bean>
+
+	
+	<bean id="dsLogin" parent="ds">
+		<property name="url" value="${jdbc.url.login}" />
+		<property name="username" value="${jdbc.username.login}" />
+		<property name="password" value="${jdbc.password.login}" />
+	</bean>
+	<bean id="ds000" parent="ds">
+		<property name="url" value="${jdbc.url.000}" />
+		<property name="username" value="${jdbc.username.000}" />
+		<property name="password" value="${jdbc.password.000}" />
+	</bean>
+
+    
+	<bean id="baseTestContextHelper" class="com.youthen.framework.test.impl.BaseTestContextHelperImpl"/>
+	
+</beans>
