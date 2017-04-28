@@ -3,7 +3,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.youthen</groupId>
-	<artifactId>ljwy-web</artifactId>
+	<artifactId>youthen-web</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>ljwy-web</name>
 	<packaging>war</packaging>
@@ -92,7 +92,7 @@
 					<systemPropertyVariables>
 						<com.youthen.master.configpath>${youthen-master.configpath}</com.youthen.master.configpath>
 					</systemPropertyVariables>
-					<argLine>${surefire.argLine.ljwy-web}</argLine>
+					<argLine>${surefire.argLine.youthen-web}</argLine>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -232,12 +232,6 @@
 		<dependency>
 			<groupId>com.youthen</groupId>
 			<artifactId>youthen-master</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-
-		<dependency>
-			<groupId>com.youthen</groupId>
-			<artifactId>youthen-oa</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 

@@ -11,13 +11,10 @@
         <dependent-module archiveName="youthen-master-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/youthen-master/youthen-master">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="youthen-oa-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/youthen-oa/youthen-oa">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
         <dependent-module archiveName="youthen-lj-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/youthen-lj/youthen-lj">
             <dependency-type>uses</dependency-type>
         </dependent-module>
         <property name="java-output-path" value="/ljwy-web/target/classes"/>
-        <property name="context-root" value="ljwy-web"/>
+        <property name="context-root" value="youthen-web"/>
     </wb-module>
 </project-modules>
