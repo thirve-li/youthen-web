@@ -4,9 +4,9 @@ window.onresize = function() {
     document.getElementById("mobileHtml").style.fontSize = document.body.clientWidth / 3.2 + "px";
 };
 //图片路径
-var imgdomain = "http://localhost:8080/ljwy-web/";
+var imgdomain = "http://localhost:8080/youthen-web/";
 //接口api
-var interfaceApi = "http://localhost:8080/ljwy-web/phoneInterface.do";
+var interfaceApi = "http://localhost:8080/youthen-web/phoneInterface.do";
 var managerMemory = "ManagerMemory";
 //默认图片
 var nullImage = "Assets/Images/Null.png";

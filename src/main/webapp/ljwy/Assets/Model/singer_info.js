@@ -80,16 +80,14 @@ var singer = function () {
                 $("#sumscore").text(result.resultObject.score);
                 $("#todayscore").text(result.resultObject.todayScore);
                 $("#name").val(result.resultObject.name);
-                if(result.resultObject.headimgurl!=""){
-                	$("#nickName").val(result.resultObject.nickName);
-                	$("#headImgDiv").empty().append('<img src="'+result.resultObject.headimgurl+'" >');
+                if(result.resultObject.headimgurl!="" && result.resultObject.headimgurl!=null){
+                	 $("#browse").attr("src", result.resultObject.headimgurl);
+                	 window.location.href = "updateimage://" + encodeURI(JSON.stringify({ mobile: JSON.parse(eval($.cookie(managerMemory))).mobile, image: result.resultObject.headimgurl }));
                 }else{
-                	$("#nickName").val("美丽苑业主");
+                	$("#nickName").val(result.resultObject.nickName);
                 	$("#headImgDiv").empty().append('<img src="Assets/Images/singer.png" >');
                 }
-                /*if (result.resultObject.image != "" && result.resultObject.image !=null) {
-                }
-                window.location.href = "updateimage://" + encodeURI(JSON.stringify({ mobile: JSON.parse(eval($.cookie(managerMemory))).mobile, image: imgdomain + result.resultObject.image }));*/
+               
                 $.each(result.resultObject.rooms, function (i, item) {
                     var roomcode = item.roomCode;
                     $('<div class="post_car room_num" buildingNum="' + roomcode.split("-")[1] + '" roomCode="' + roomcode.split("-")[2] + '">羽山路383弄' + roomcode.split("-")[1] + '号<a>删除</a><span class="roomnum">' + roomcode.split("-")[2] + '室</span></div>').appendTo("#roomNumber")

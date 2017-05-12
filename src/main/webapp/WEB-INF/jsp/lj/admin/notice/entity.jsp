@@ -467,7 +467,7 @@
 						</p>
 					</c:if>
 
-					<c:if test="${dto.type!=4 && dto.type!=5 && dto.type!=7 && dto.type!=9}">
+					<c:if test="${dto.type!=4 && dto.type!=5 && dto.type!=7 && dto.type!=8 && dto.type!=9 && dto.type!=6}">
 						<table id="purposeTbale"
 							style="margin-left: 50px; margin-top: 20px;">
 							<tr style="background-color: gray">
@@ -476,7 +476,51 @@
 								<td><input type="file" name="img" value="${dto.image1 }"
 									class="doc" /></td>
 								<td><a href="###" class="button_02"
-									onclick="addRow('purposeTbale',-1,'tempRow')">+</a></td>
+									onclick="addRow('purposeTbale',-1,'tempRow')">+</a><label>&nbsp;&nbsp;上传图片尺寸:400*300</label></td>
+							</tr>
+						</table>
+						<table style="display: none; margin-left: 50px; margin-top: 10px;">
+							<tr id="tempRow">
+								<td style="display: block; float: left; width: 120px;">添加照片<b><font
+										class="ff6600">*</font></b></td>
+								<td><input type="file" name="img" value="" class="doc" /></td>
+								<td><a href="###" class="button_02"
+									onclick="delRow(this,'purposeTbale');">-</a></td>
+							</tr>
+						</table>
+					</c:if>
+					<c:if test="${dto.type==6}">
+						<table id="purposeTbale"
+							style="margin-left: 50px; margin-top: 20px;">
+							<tr style="background-color: gray">
+								<td style="display: block; float: left; width: 120px;">添加照片<b><font
+										class="ff6600">*</font></b></td>
+								<td><input type="file" name="img" value="${dto.image1 }"
+									class="doc" /></td>
+								<td><a href="###" class="button_02"
+									onclick="addRow('purposeTbale',-1,'tempRow')">+</a><label>&nbsp;&nbsp;上传图片尺寸:640*280</label></td>
+							</tr>
+						</table>
+						<table style="display: none; margin-left: 50px; margin-top: 10px;">
+							<tr id="tempRow">
+								<td style="display: block; float: left; width: 120px;">添加照片<b><font
+										class="ff6600">*</font></b></td>
+								<td><input type="file" name="img" value="" class="doc" /></td>
+								<td><a href="###" class="button_02"
+									onclick="delRow(this,'purposeTbale');">-</a></td>
+							</tr>
+						</table>
+					</c:if>
+					<c:if test="${dto.type==8}">
+						<table id="purposeTbale"
+							style="margin-left: 50px; margin-top: 20px;">
+							<tr style="background-color: gray">
+								<td style="display: block; float: left; width: 120px;">添加照片<b><font
+										class="ff6600">*</font></b></td>
+								<td><input type="file" name="img" value="${dto.image1 }"
+									class="doc" /></td>
+								<td><a href="###" class="button_02"
+									onclick="addRow('purposeTbale',-1,'tempRow')">+</a><label>&nbsp;&nbsp;上传图片尺寸:121*75</label></td>
 							</tr>
 						</table>
 						<table style="display: none; margin-left: 50px; margin-top: 10px;">
