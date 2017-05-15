@@ -72,7 +72,7 @@ function checkFileExt() {
 				<p style="margin-left: 50px; margin-top: 20px;">
 					<label style="display: block; float: left; width: 120px;">类型图片：<b><font
 							class="ff6600">*</font></b></label> 
-					<input type="file" name="img" value="" class="doc" />
+					<input type="file" name="img" value="" class="doc" /><lable>上传图片尺寸:80*68</lable>
 				</p>
 				
 				
