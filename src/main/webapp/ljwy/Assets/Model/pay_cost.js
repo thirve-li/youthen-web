@@ -40,7 +40,7 @@ var payCost = function() {
                             getBomBbox("还没有绑定房屋信息哦！");
                         });
                         $("#ok").on("click", function() {
-                            location.href = "singer_info.html"
+                            location.href = "singer_info.html";
                         });
                     }
                     else if (result.messageCode == 3) {
@@ -122,19 +122,19 @@ var payCost = function() {
             /*获取缴费类型*/
             var getType = function() {
                     return GetQueryString("type");
-                }
+                };
                 /*获取缴费位置*/
             var getPlaceArray = function(type) {
                 var placeArray;
                 if (type == "0") {
                     placeArray = $(".place").find(".type[cur='1']").attr("roomcode");
-                    //$.each($(".place").find(".type[cur='1']"), function (i, item) {
-                    //    placeArray.push($(this).attr("roomcode"));
-                    //})
+                    $.each($(".place").find(".type[cur='1']"), function (i, item) {
+                        placeArray.push($(this).attr("roomcode"));
+                    });
                 }
 
                 return placeArray;
-            }
+            };
 
             //更新价格
             var updateTotal = function(type, placeArray, months, cuponid) {
@@ -156,7 +156,7 @@ var payCost = function() {
                 }
                 $(".carprice").find("span").empty();
                 $(".carprice").find("span").text(total);
-            }
+            };
 
             var getParams = function() {
                 isLogin();
@@ -169,7 +169,7 @@ var payCost = function() {
                     roomCode: getPlaceArray(0),
                     score: 0,
                     total: $(".carprice p span").text()
-                }
+                };
 
 
                 return paramsJson;
@@ -206,7 +206,7 @@ var payCost = function() {
                             secretKey: "mobileSecretKey1234567890",
                             opt: "pay",
                             params: JSON.stringify(paramsJson)
-                        }
+                        };
                         $.post(interfaceApi, data, function(result) {
                             var result = JSON.parse(result);
                             if (result.messageCode == 1) {

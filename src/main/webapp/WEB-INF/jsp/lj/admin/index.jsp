@@ -112,7 +112,7 @@
 									onclick="setMainWorkSpace('${path}/lj-notice/list.action?dto.type=4')">意见反馈查看</a>
 							</div>
 						</li>
-						<li>
+						<%-- <li>
 							<h4 class="M6">
 								<span></span>园区社交
 							</h4>
@@ -122,7 +122,7 @@
 								<a href="#"
 									onclick="setMainWorkSpace('${path}/lj-notice/list.action?dto.type=2')">个人话题</a>
 							</div>
-						</li>
+						</li> --%>
 						<li>
 							<h4 class="M7">
 								<span></span>生活服务
@@ -131,12 +131,12 @@
 							    <a href="#" onclick="setMainWorkSpace('${path}/lj-merchant/typeList.action?typeCode=SQHY')">黄页类型</a>
 								<a href="#" onclick="setMainWorkSpace('${path}/lj-merchant/list.action?typeCode=SQHY')">黄页</a>
 								
-								<a href="#" onclick="setMainWorkSpace('${path}/lj-merchant/typeList.action?typeCode=JZFW')">家政服务类型</a>
+								<%-- <a href="#" onclick="setMainWorkSpace('${path}/lj-merchant/typeList.action?typeCode=JZFW')">家政服务类型</a>
 								<a href="#" onclick="setMainWorkSpace('${path}/lj-merchant/list.action?typeCode=JZFW')">家政服务</a>
 
                                 <a href="#" onclick="setMainWorkSpace('${path}/lj-goods/goodsTypeList.action')">商品类型</a>
                                 <a href="#" onclick="setMainWorkSpace('${path}/lj-goods/list.action?dto.isSecond=0')">商品</a>
-								<a href="#" onclick="setMainWorkSpace('${path}/lj-goods/list.action?dto.isSecond=1')">二手商品</a>
+								<a href="#" onclick="setMainWorkSpace('${path}/lj-goods/list.action?dto.isSecond=1')">二手商品</a> --%>
 								
 								<a href="#" onclick="setMainWorkSpace('${path}/lj-kuaidi/kuaiDiList.action?dto.type=EXPRESS_COMPANY')">快递公司</a>
 							</div>

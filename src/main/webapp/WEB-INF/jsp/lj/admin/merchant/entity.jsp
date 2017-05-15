@@ -173,12 +173,12 @@
 
 				<table id="purposeTbale"
 					style="margin-left: 50px; margin-top: 20px;">
-					<tr style="background-color: gray">
-						<td style="display: block; float: left; width: 116px;">添加图片</td>
+					<tr style="background-color: gray;">
+						<td style="display: block; float: left; width: 116px;">添加照片</td>
 						<td><input type="file" name="img" value="${dto.image1 }"
 							class="doc" /></td>
 						<td><a href="###" class="button_02"
-							onclick="addRow('purposeTbale',-1,'tempRow')">+</a></td>
+							onclick="addRow('purposeTbale',-1,'tempRow')">+</a><label>上传图片尺寸:282*203</label></td>
 					</tr>
 
 				</table>

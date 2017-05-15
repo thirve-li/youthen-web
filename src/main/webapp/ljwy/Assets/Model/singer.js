@@ -19,10 +19,10 @@
                 	$("#browse").attr("src", result.resultObject.headimgurl);
                	 	window.location.href = "updateimage://" + encodeURI(JSON.stringify({ mobile: JSON.parse(eval($.cookie(managerMemory))).mobile, image: result.resultObject.headimgurl }));
                     $("#name a img").attr("src", result.resultObject.headimgurl);
-                    $("#name").html('<div class="photo">' + '<a class="head_portrait"><img src="' +result.resultObject.headimgurl + '" /></a><a href="singer_info.html"><span>' + result.resultObject.nickName + '</span></a>' + '</div>');
+                    $("#name").html('<div class="photo">' + '<a class="head_portrait"><img src="' +result.resultObject.headimgurl + '" /></a><a href="#"><span>' + result.resultObject.nickName + '</span></a>' + '</div>');
                     
                 }else{
-                    $("#name").html('<div class="photo">' + '<a class="head_portrait"><img src="' + result.resultObject.headimgurl + '" /></a><a href="singer_info.html"><span>' + "美丽苑业主" + '</span></a>' + '</div>');
+                    $("#name").html('<div class="photo">' + '<a class="head_portrait"><img src="' + result.resultObject.headimgurl + '" /></a><a href="#"><span>' + "美丽苑业主" + '</span></a>' + '</div>');
                     $("#name a img").attr("src", "Assets/Images/singer.png");
                 }
                 $("#total").text(result.resultObject.score);
@@ -34,7 +34,7 @@
 
                 }
                 //签到显示
-                if (result.resultObject.hasAsigned != 1) {
+                /*if (result.resultObject.hasAsigned != 1) {
                     $("#singIn").html("");
                     $("#signs").html("签到");
                     //signs_click();
@@ -43,7 +43,7 @@
                     $("#signs").html("<a id='signs' style='background-color:#b3b3b3;'>已签到</a>");
                     $("#singIn").remove();
 
-                }
+                }*/
             }
             else if (result.messageCode == 2) {
                 location.href = "login.html";
@@ -59,14 +59,14 @@
             }
         });
 
-        $("#name").delegate(".head_portrait", "click", function () {
+       /* $("#name").delegate(".head_portrait", "click", function () {
             var src = $(this).find("img").attr("src");
             $("#Bigimg img").attr("src", src);
             $("#Bigimg").show();
         });
         $("#Bigimg").click(function () {
             $("#Bigimg").hide();
-        })
+        })*/
     };
     //个人信息
     this.singer_info = function () {
