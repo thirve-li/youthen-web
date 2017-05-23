@@ -5,8 +5,6 @@ var singer = function () {
         isLogin();
         //验证表单是否改变
         var checkForm=true;
-        //真实姓名
-        var initNameValue;
         //昵称
         var initNickNameValue;
         //添加房屋的标识
@@ -81,13 +79,19 @@ var singer = function () {
                 $("#todayscore").text(result.resultObject.todayScore);
                 $("#name").val(result.resultObject.name);
                 if(result.resultObject.headimgurl!="" && result.resultObject.headimgurl!=null){
-                	 $("#browse").attr("src", result.resultObject.headimgurl);
-                	 window.location.href = "updateimage://" + encodeURI(JSON.stringify({ mobile: JSON.parse(eval($.cookie(managerMemory))).mobile, image: result.resultObject.headimgurl }));
-                }else{
+                	$("#edit").on("click",function(){
+                		$("#browse").attr("src", result.resultObject.headimgurl);
+                		window.location.href = "updateimage://" + encodeURI(JSON.stringify({ mobile: JSON.parse(eval($.cookie(managerMemory))).mobile, image: result.resultObject.headimgurl }));
+                	});
                 	$("#nickName").val(result.resultObject.nickName);
+        		}else{
+        			$("#edit").on("click",function(){
+                		
+                	});
+                	$("#nickName").val("美丽苑业主");
                 	$("#headImgDiv").empty().append('<img src="Assets/Images/singer.png" >');
                 }
-               
+                window.location.href = "updateimage://" + encodeURI(JSON.stringify({ mobile: JSON.parse(eval($.cookie(managerMemory))).mobile, image: result.resultObject.headimgurl }));
                 $.each(result.resultObject.rooms, function (i, item) {
                     var roomcode = item.roomCode;
                     $('<div class="post_car room_num" buildingNum="' + roomcode.split("-")[1] + '" roomCode="' + roomcode.split("-")[2] + '">羽山路383弄' + roomcode.split("-")[1] + '号<a>删除</a><span class="roomnum">' + roomcode.split("-")[2] + '室</span></div>').appendTo("#roomNumber")
@@ -96,7 +100,6 @@ var singer = function () {
                     $('<div class="post_car car_color"carnum="' + item.carNo + '"parkNum="' + item.parkNo + '">' + item.carNo + '<a>删除</a><span class="parknum">' + item.parkNo + '</span></div>').appendTo("#carNumber")
 
                 });*/
-                initNameValue=result.resultObject.name;
                 initNickNameValue=result.resultObject.nickName;
                 // $("#click_1").click(function () {
                 //     $("#roomNumber").parent().find("#roomNumber").animate({ height: 70 + "px" }, 1000);
@@ -128,7 +131,7 @@ var singer = function () {
                     //昵称的值
                     newNickNameValue=$("#nickName").val();
                    
-                            if(initNameValue==newNameValue && initNickNameValue == newNickNameValue //
+                            if(initNickNameValue == newNickNameValue //
                                 && addHouseFlag==false && deleteHouseFlag==false){
                                 getBomBbox("亲~你还没做任何改变哟");
                                 checkForm=false;
