@@ -1,0 +1,137 @@
+/**版本字体样式*/
+.rcwrap h2 {
+    height: 0.7rem;
+    text-align: center;
+    line-height: 0.7rem;
+}
+
+.rcwrap h2 strong {
+    font-size: 0.22remc;
+}
+
+.rcwrap h2 em{
+	font-size: 0.14rem;
+}
+
+.figtxt ul {
+    width: 2.9rem;
+    margin: 0 auto;
+}
+ul {
+    list-style: none;
+}
+
+.figtxt li {
+    width: 100%;
+    height: 0.27rem;
+    overflow: hidden;
+    line-height: 0.27rem;
+    color: #666;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+}
+
+#dver span, #dver_1 span {
+    cursor: pointer;
+}
+.rcwrap h2 span {
+    color: #979797;
+}
+
+.flbtn .qr{
+	text-align: center;
+    width: 2.90rem;
+    margin: 0 auto;
+
+}
+
+.flbtn .lbtn {
+    float: left;
+}
+
+.lbtn {
+    width: 1.6rem;
+    height: .68rem;
+    margin: 0 auto;
+    font-size: .14rem;
+    text-align:center;
+}
+
+.lbtn em {
+    display: block;
+    height: .20rem;
+    line-height: .17rem;
+    color: #848484;
+    font-size: .12rem;
+}
+
+em {
+    font-style: normal;
+}
+
+.drwrap {
+    position: relative;
+    width: 100%;
+    height: .26rem;
+}
+
+.drwrap .andd {
+    position: absolute;
+    left: 28px;
+    top: 0;
+    z-index: 500;
+}
+
+a:link, a:visited {
+    color: #333;
+    text-decoration: none;
+}
+
+.rcmb .andd span{
+    background: transparent url(../Images/android.png) no-repeat 0 center;
+}
+
+
+.down_btn_126x30{
+	display:block;
+	width: 1.15rem;
+    height: .26rem;
+	background: transparent url(../Images/bg.png) no-repeat 0 0;
+	margin: 0 auto;
+	line-height: .26rem;
+}
+
+.down_btn_126x30 span {
+    padding-left: .24rem;
+    color: #fff;
+    letter-spacing: 0.12em;
+}
+
+.drwrap .dropList {
+    display: none;
+    position: absolute;
+    left: 28px;
+    top: 18px;
+    width: 1.13rem;
+    padding: 18px 0 10px;
+    background: transparent url(../Images/dpbg.png) no-repeat left bottom;
+    z-index: 100;
+}
+
+.dropList a {
+    display: block;
+    height: .30rem;
+    line-height: .30rem;
+    color: #fff;
+    font-size:0.12rem;
+}
+.lbtn .iosd span {
+    background: transparent url(../Images/ios.png) no-repeat 0 center;
+}
+
+
+
+#drwrap .dropList{
+	display: none;
+}
