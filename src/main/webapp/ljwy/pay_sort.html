@@ -19,7 +19,7 @@
     </div>
     <div class="simple"></div>
     <div class="banner">
-       <img src="Assets/Images/payments.jpg" />
+       <img src="Assets/Images/payments.png" />
     </div>
     <div class="communities">
 
@@ -106,6 +106,50 @@
             isLogin();
             information();
         })
+        
+        function getCode(){
+		var code= GetQueryString("code");
+		if(code==null || typeof(code)=="undifined"){
+			if (JSON.parse(eval($.cookie(managerMemory))) != null) {
+				code = JSON.parse(eval($.cookie(managerMemory))).openId;
+				//alert("cookie="+code);
+			 }  
+		}
+		return code;
+	}
+	
+	var code = getCode(); 
+	getOpenId(code);
+	var openId = "";
+	var accessToken = "";
+	function getOpenId(code){
+		var paramsJson = {
+				code : code,
+		};
+		
+		var data = {
+			secretKey: "mobileSecretKey1234567890",
+			opt : "getAccessToken",
+			params : JSON.stringify(paramsJson)
+		}; 
+		
+		$.ajax({ 
+			type: "get", 
+	        url:  interfaceApi , 
+            async:false, 
+            data:data, 
+            dataType: "text", 
+            success: function(data){ //获取openId
+            	var dataObj=eval("("+data+")");//转换为json对象
+                openId = dataObj.resultObject.openid;
+            	accessToken= dataObj.resultObject.accessToken;
+            	$("#openId").val(openId);
+            	$("#accessToken").val(accessToken);
+            	$.cookie("openId", openId);
+            	$.cookie("accessToken", accessToken);
+            }  
+		});
+	}
     </script>
 </body>
 </html>
