@@ -29,8 +29,9 @@ body {
 }
 
 .score {
-	float: right;
-	margin-top: .16rem;
+    float: left;
+    margin: 0.4rem 0 0 0.1rem;
+    color: #7d7d7d;
 }
 
 .score p {
