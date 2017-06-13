@@ -16,13 +16,11 @@
             if (result.messageCode == 1) {
                   information();
                 if (result.resultObject.headimgurl != "") {
-                	$("#browse").attr("src", result.resultObject.headimgurl);
-               	 	window.location.href = "updateimage://" + encodeURI(JSON.stringify({ mobile: JSON.parse(eval($.cookie(managerMemory))).mobile, image: result.resultObject.headimgurl }));
-                    $("#name a img").attr("src", result.resultObject.headimgurl);
-                    $("#name").html('<div class="photo">' + '<a class="head_portrait"><img src="' +result.resultObject.headimgurl + '" /></a><a href="#"><span>' + result.resultObject.nickName + '</span></a>' + '</div>');
-                    
+                    $("#name a img").attr("src", imgdomain+result.resultObject.headimgurl);
+                    $("#name").html('<div class="photo">' + '<a class="head_portrait"><img src="' +imgdomain+result.resultObject.headimgurl + '" /></a><a href="#"><span>' + result.resultObject.nickName + '</span></a>' + '</div>');
+
                 }else{
-                    $("#name").html('<div class="photo">' + '<a class="head_portrait"><img src="' + result.resultObject.headimgurl + '" /></a><a href="#"><span>' + "美丽苑业主" + '</span></a>' + '</div>');
+                    $("#name").html('<div class="photo">' + '<a class="head_portrait"><img src="' + imgdomain+result.resultObject.headimgurl + '" /></a><a href="#"><span>' + "美丽苑业主" + '</span></a>' + '</div>');
                     $("#name a img").attr("src", "Assets/Images/singer.png");
                 }
                 $("#total").text(result.resultObject.score);
