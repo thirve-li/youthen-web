@@ -79,18 +79,19 @@ var singer = function () {
                 $("#todayscore").text(result.resultObject.todayScore);
                 $("#name").val(result.resultObject.name);
                 if(result.resultObject.headimgurl!="" && result.resultObject.headimgurl!=null){
-                	$("#edit").on("click",function(){
-                		$("#browse").attr("src", result.resultObject.headimgurl);
-                		window.location.href = "updateimage://" + encodeURI(JSON.stringify({ mobile: JSON.parse(eval($.cookie(managerMemory))).mobile, image: result.resultObject.headimgurl }));
-                	});
-                	$("#nickName").val(result.resultObject.nickName);
-        		}else{
-        			$("#edit").on("click",function(){
-                		
-                	});
-                	$("#nickName").val("美丽苑业主");
-                	$("#headImgDiv").empty().append('<img src="Assets/Images/singer.png" >');
-                }
+                    // $("#edit").on("click",function(){
+                    //  $("#browse").attr("src", imgdomain+result.resultObject.headimgurl);
+                    //  window.location.href = "updateimage://" + encodeURI(JSON.stringify({ mobile: JSON.parse(eval($.cookie(managerMemory))).mobile, image: result.resultObject.headimgurl }));
+                    // });
+                    $("#nickName").val(result.resultObject.nickName);
+                    $("#browse").attr("src", imgdomain+result.resultObject.headimgurl);
+                    // $("#headImgDiv").empty().append('<img src="'+imgdomain+result.resultObject.headimgurl+'" >');
+                }else{
+                    
+                    $("#nickName").val("美丽苑业主");
+                    $("#browse").attr("src", "Assets/Images/singer.png");
+                    // $("#headImgDiv").empty().append('<img src="Assets/Images/singer.png" >');
+                }   
                 window.location.href = "updateimage://" + encodeURI(JSON.stringify({ mobile: JSON.parse(eval($.cookie(managerMemory))).mobile, image: result.resultObject.headimgurl }));
                 $.each(result.resultObject.rooms, function (i, item) {
                     var roomcode = item.roomCode;
