@@ -98,6 +98,11 @@ function doSearch(gotoPage){
 								href="${path}/lj-merchant/view.action?dto.id=${merchantlist.id}&typeCode=${typeCode}">查看</a>
 								<c:if test="${merchantlist.status == '1'}">
 								<a
+								href="${path}/lj-merchant/isTop.action?dto.id=${merchantlist.id}&typeCode=${typeCode}&dto.isTop=${merchantlist.isTop}">
+								 <c:if test="${merchantlist.isTop=='0' }">置顶</c:if> <c:if
+												test="${merchantlist.isTop=='1' }">取消置顶</c:if>
+								</a>
+								<a
 								href="${path}/lj-merchant/entityInit.action?dto.id=${merchantlist.id}&typeCode=${typeCode}">修改</a>
 								<a
 								href="${path}/lj-merchant/deleteMerchant.action?dto.id=${merchantlist.id}&typeCode=${typeCode}">失效</a>
@@ -135,6 +140,7 @@ function doSearch(gotoPage){
 							<td><a
 								href="${path}/lj-merchant/view.action?dto.id=${merchantlist.id}&typeCode=${typeCode}">查看</a>
 								<c:if test="${merchantlist.status == '1'}">
+								
 								<a
 								href="${path}/lj-merchant/entityInit.action?dto.id=${merchantlist.id}&typeCode=${typeCode}">修改</a>
 								<a

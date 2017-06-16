@@ -40,7 +40,7 @@ var payCost = function() {
                             getBomBbox("还没有绑定房屋信息哦！");
                         });
                         $("#ok").on("click", function() {
-                            location.href = "singer_info.html";
+                            location.href = "singer_info.html"
                         });
                     }
                     else if (result.messageCode == 3) {
@@ -122,19 +122,19 @@ var payCost = function() {
             /*获取缴费类型*/
             var getType = function() {
                     return GetQueryString("type");
-                };
+                }
                 /*获取缴费位置*/
             var getPlaceArray = function(type) {
                 var placeArray;
                 if (type == "0") {
                     placeArray = $(".place").find(".type[cur='1']").attr("roomcode");
-                    $.each($(".place").find(".type[cur='1']"), function (i, item) {
-                        placeArray.push($(this).attr("roomcode"));
-                    });
+						/*$.each($(".place").find(".type[cur='1']"), function (i, item) {
+							placeArray.push($(this).attr("roomcode"));
+						});*/
                 }
 
                 return placeArray;
-            };
+            }
 
             //更新价格
             var updateTotal = function(type, placeArray, months, cuponid) {
@@ -142,7 +142,7 @@ var payCost = function() {
                 if (type == "0") {
                     if ($(".place").find(".type[cur='1']").attr("roomcode") == placeArray) {
                         var price = $(".place").find(".type[cur='1']").parent().attr("price");
-                        total += (parseFloat(price) * parseFloat(months)).toFixed(2);
+                        total += (parseFloat(price) * parseFloat(months)).toFixed(1);
                     }
 
                 } else if (type == "1") {
@@ -156,12 +156,16 @@ var payCost = function() {
                 }
                 $(".carprice").find("span").empty();
                 $(".carprice").find("span").text(total);
-            };
+            }
 
             var getParams = function() {
                 isLogin();
+                
+                var from = "app";
+                var openId = $.cookie("openId");
                 var paramsJson = {
                     mobile: JSON.parse(eval($.cookie(managerMemory))).mobile,
+                    openid: openId,
                     type: getType(),
                     payType: "0",
                     months: $(".date span[cur='1']").attr("months"),
@@ -169,9 +173,7 @@ var payCost = function() {
                     roomCode: getPlaceArray(0),
                     score: 0,
                     total: $(".carprice p span").text()
-                };
-
-
+                }
                 return paramsJson;
             };
 
@@ -195,6 +197,7 @@ var payCost = function() {
                     islight = true;
                 }
             });
+            
             $("#sub").on("click", function() {
                 if (islight == false) {
                     if($(".place p").html() != null){
@@ -206,11 +209,70 @@ var payCost = function() {
                             secretKey: "mobileSecretKey1234567890",
                             opt: "pay",
                             params: JSON.stringify(paramsJson)
-                        };
+                        }
                         $.post(interfaceApi, data, function(result) {
+                        	 
                             var result = JSON.parse(result);
                             if (result.messageCode == 1) {
-                                location.href = result.resultObject;
+                            	 
+                            var openId = $.cookie("openId");
+                            if(openId!=null && openId!=""){//微信公众号
+                               var obj =  result.resultObject; 
+                            	 if (typeof WeixinJSBridge == "undefined"){
+                         		   if( document.addEventListener ){
+                         		       document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+                         		   }else if (document.attachEvent){
+                         		       document.attachEvent('WeixinJSBridgeReady', onBridgeReady); 
+                         		       document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+                         		   }
+                         		}else{ 
+                         		   WeixinJSBridge.invoke(
+                         		       'getBrandWCPayRequest', {
+                         		           "appId":obj.appid,     //公众号名称，由商户传入     
+                         		           "timeStamp":obj.timestamp,         //时间戳，自1970年以来的秒数     
+                         		           "nonceStr":obj.noncestr, //随机串     
+                         		           "package":"prepay_id="+obj.prepayid,     
+                         		           "signType":"MD5",         //微信签名方式：     
+                         		           "paySign":obj.sign //微信签名 
+                         		       },
+                         		       function(res){
+                         		           if(res.err_msg == "get_brand_wcpay_request:ok" ) {//支付成功
+                         		        	  location.href = "property.html?msg=ok";
+                         		           }else if (res.err_msg == "get_brand_wcpay_request:cancel"){  
+                         		        	  location.href = "property.html?msg=支付过程中用户取消";
+                         		           }else{ //支付失败   
+                         		        	  location.href = "property.html?msg=支付失败"+res.err_msg;
+                         		           }   
+                         		          
+                         		       }
+                         		   ); 
+                         		}   
+                             }else{// app 
+                            	 location.href = result.resultObject;
+                             }
+//                                alert(" ====obj.sign =="+ obj.sign);
+//                            	wx.config({
+//                            	    debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+//                            	    appId: obj.appid, // 必填，公众号的唯一标识
+//                            	    timeStamp: obj.timestamp, // 必填，生成签名的时间戳
+//                            	    nonceStr: obj.noncestr, // 必填，生成签名的随机串
+//                            	    signature: obj.sign,// 必填，签名，见附录1
+//                            	    jsApiList: ['chooseWXPay'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+//                            	});
+//                            	
+//                            	wx.chooseWXPay({
+//                            		appId:obj.appid,
+//                            	    timestamp: obj.timestamp, // 支付签名时间戳，注意微信jssdk中的所有使用timestamp字段均为小写。但最新版的支付后台生成签名使用的timeStamp字段名需大写其中的S字符
+//                            	    nonceStr: obj.noncestr, // 支付签名随机串，不长于 32 位
+//                            	    package: "prepay_id="+obj.prepayid, // 统一支付接口返回的prepay_id参数值，提交格式如：prepay_id=***）
+//                            	    signType: 'MD5', // 签名方式，默认为'SHA1'，使用新版支付需传入'MD5'
+//                            	    paySign: obj.sign, // 支付签名
+//                            	    success: function (res) {
+//                            	       alert(res.err_msg);
+//                            	    }
+//                            	});
+                            
+                                
                             } else {
                                 index = 1;
                                 $("#sub").attr("onselectstart", "");
@@ -285,7 +347,7 @@ var payCost = function() {
 
                     }
                     $(".payment_list").remove();
-                    if (result.resultObject> 0) {
+                    if (result.resultObject!=null && result.resultObject.length> 0) {
                         $.each(result.resultObject, function(i, item) {
                             var allhtml = "";
                             var payhtml = "";
@@ -308,7 +370,7 @@ var payCost = function() {
                             //        payhtml = "<span class=\"state stone\">已支付</span>";
                             //        break;
                             //}
-                            $(IsState(item.status) + "<div class=\"order\">" + " <p class=\"order_child\">" + allhtml + "<span>缴费期数</span>" + "</p>" + "<p class=\"pay\">" + "<span class=\"price\">" + item.fee + "</span><span class='timeD'>" + ("" + item.lastPeriod).substring(0, 4) + "年" + ("" + item.lastPeriod).substring(4, 6) + "月</span></p>" + "</div>" + "</a>").appendTo(".detail_main");
+                            $(IsState(item.status) + "<div class=\"order\">" + " <p class=\"order_child\">" + allhtml + "<span>缴费期数</span>" + "</p>" + "<p class=\"pay\">" + "<span class=\"price\">" +(""+ item.fee).substring(0,6) + "</span><span class='timeD'>" + "" + item.feeMonth+ "月</span></p>" + "</div>" + "</a>").appendTo(".detail_main");
                         });
                     } else {
                         $(".nullimg").show();

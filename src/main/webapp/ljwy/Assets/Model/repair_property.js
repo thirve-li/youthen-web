@@ -125,7 +125,7 @@ var repair = function() {
                     str = "已报修";
                     break;
                 case 1:
-                    str = "处理中";
+                    str = "受理中";
                     break;
                 case 2:
                     str = "已处理";
@@ -357,7 +357,7 @@ var repair = function() {
                 return "已报修";
                 break;
             case 1:
-                return "处理中";
+                return "受理中";
                 break;
             case 2:
                 return "已处理";

@@ -105,8 +105,8 @@
 							<select name="dto.status" id="status" class="select_01"
 								style="width: 100px;">
 								<option value="" <c:if test="${dto.status == null }"> selected </c:if>>请选择</option>
-								<option value="0" <c:if test="${dto.status == 0 }"> selected </c:if>>未处理</option>
-								<%-- <option value="1" <c:if test="${dto.status == 1 }"> selected </c:if>>已处理</option> --%>
+								<option value="0" <c:if test="${dto.status == 0 }"> selected </c:if>>已报修</option>
+								<option value="1" <c:if test="${dto.status == 1 }"> selected </c:if>>已受理</option> 
 							    <option value="2" <c:if test="${dto.status == 2 }"> selected </c:if>>已处理</option>  
 								<option value="3" <c:if test="${dto.status == 3 }"> selected </c:if>>已撤销</option>
 								<option value="4" <c:if test="${dto.status == 4 }"> selected </c:if>>已评价</option>
@@ -116,11 +116,11 @@
 							投诉状态 <select name="dto.status" id="status" class="select_01"
 								style="width: 100px;">
 								<option value="" <c:if test="${dto.status == null }"> selected </c:if>>请选择</option>
-								<option value="0" <c:if test="${dto.status == 0 }"> selected </c:if>>未处理</option>
-								<%-- <option value="1" <c:if test="${dto.status == 1 }"> selected </c:if>>已处理</option> --%>
+								<option value="0" <c:if test="${dto.status == 0 }"> selected </c:if>>已投诉</option>
+								<option value="1" <c:if test="${dto.status == 1 }"> selected </c:if>>已受理</option> 
 								<option value="2" <c:if test="${dto.status == 2 }"> selected </c:if>>已处理</option>
 								<option value="3" <c:if test="${dto.status == 3 }"> selected </c:if>>已撤销</option>
-								<option value="4" <c:if test="${dto.status == 3 }"> selected </c:if>>已处理</option>
+								<option value="4" <c:if test="${dto.status == 4 }"> selected </c:if>>已评价</option>
 							</select> 
 					</c:if>
 					<a id="gotoPage" href="#" onclick="doSearch(1)" class="button_01">查询</a>
@@ -154,8 +154,8 @@
 						<c:if test="${dto.type==0 }">
 							<td>${repair.roomCode }</td>
 							<td>
-							  <c:if test="${repair.status == '0'}">未处理</c:if>
-							 <%--  <c:if test="${repair.status == '1'}">处理中</c:if>  --%>
+							  <c:if test="${repair.status == '0'}">已报修</c:if>
+							 <c:if test="${repair.status == '1'}">已受理</c:if>  
 							  <c:if test="${repair.status == '2'}">已处理</c:if>
 							  <c:if test="${repair.status == '3'}">已撤销</c:if>
 							   <c:if test="${repair.status == '4'}">已评价</c:if>
@@ -163,8 +163,8 @@
 						</c:if>
 						<c:if test="${dto.type==1 }">
 							<td>
-							   <c:if test="${repair.status == '0'}">未处理</c:if> 
-							   <c:if test="${repair.status == '1'}">处理中</c:if> 
+							   <c:if test="${repair.status == '0'}">已投诉</c:if> 
+							   <c:if test="${repair.status == '1'}">已受理</c:if> 
 							   <c:if test="${repair.status == '2'}">已处理</c:if>
 							   <c:if test="${repair.status == '3'}">已撤销</c:if>
 							   <c:if test="${repair.status == '4'}">已评价</c:if>
@@ -184,8 +184,12 @@
 							</c:if>
 							 --%>
 							<c:if test="${repair.status == '0'}">
-							   <a href="${path}/lj-repair/toDealWith.action?dto.id=${repair.id}&dto.type=${dto.type}">已处理</a> 
+							   <a href="${path}/lj-repair/toAcceptWith.action?dto.id=${repair.id}&dto.type=${dto.type}">已受理</a> 
 							</c:if> 
+							<c:if test="${repair.status == '1'}">
+							<a href="${path}/lj-repair/toDealWith.action?dto.id=${repair.id}&dto.type=${dto.type}">已处理</a> 
+							</c:if>
+							
 						   
 						</td>
 					</tr>

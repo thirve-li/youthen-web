@@ -24,9 +24,9 @@ var message=function(){
                             
                             }else if(item.type=="2"){
                                 $(".list").append("<a href='activity_detail.html?id=" + item.postId + "'><div class='source'><div class='left'><img src='Assets/Images/huodong.png' /></div><div class='particulars'><p class='title'>物业活动</p><p>" + item.title + "</p></div></div></a>");
-                            }else if(item.type=="3"){
+                            }/*else if(item.type=="3"){
                                 $(".list").append("<a href='recommend_detail.html?id=" + item.postId + "'><div class='source'><div class='left'><img src='Assets/Images/tuijian.png' /></div><div class='particulars'><p class='title'>推荐</p><p>" + item.title + "</p></div></div></a>");
-                            } else if(item.type=="4"){
+                            } */else if(item.type=="4"){
                                 $(".list").append("<a href='topic_details.html?id=" + item.postId + "'><div class='source'><div class='left'><img src='Assets/Images/notice_01.png' /></div><div class='particulars'><p class='title'>个人话题</p><p>" + item.title + "</p></div></div></a>");
                             }  else if(item.type=="5"){
                                 $(".list").append("<a href='personal_activities_details.html?id=" + item.postId + "'><div class='source'><div class='left'><img src='Assets/Images/notice_02.png' /></div><div class='particulars'><p class='title'>个人活动</p><p>" + item.title + "</p></div></div></a>");

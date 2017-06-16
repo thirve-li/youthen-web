@@ -153,7 +153,7 @@
 				<c:if test="${dto.type==6 }">
 					<li>社区公告</li>
 					<li>></li>
-					<li>推荐活动管理</li>
+					<li>焦点图管理</li>
 				</c:if>
 				<c:if test="${dto.type==7 }">
 					<li>社区公告</li>
@@ -361,10 +361,10 @@
 					<c:if test="${dto.type==6 }">
 						<p style="margin-left: 50px; margin-top: 20px;">
 							<label
-								style="display: block; float: left; width: 120px; margin-top: 5px">推荐活动名:<b><font
+								style="display: block; float: left; width: 120px; margin-top: 5px">焦点图名称:<b><font
 									class="ff6600">*</font></b></label>
 							<s:textfield name="dto.name" cssClass="input_04" theme="simple"
-								labelTxt="推荐活动名" require="true"></s:textfield>
+								labelTxt="焦点图名称" require="true"></s:textfield>
 						</p>
 
 						<p style="margin-left: 50px; margin-top: 20px;">
@@ -375,7 +375,7 @@
 								style="width: 700px; height: 100px;" maxlength="30">${dto.shortDesc} </textarea>
 						</p>
 
-						<p style="margin-left: 50px; margin-top: 20px;">推荐活动内容:</p>
+						<%--<p style="margin-left: 50px; margin-top: 20px;">推荐活动内容:</p>
 						<script type="text/javascript">
 							var editor = UE.getEditor('theContent', {
 								//默认编辑器的高度
@@ -405,7 +405,7 @@
 								type="text" labelTxt="结束时间" class="inputDate"
 								style="width: 150px;"
 								onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',minDate:'#F{$dp.$D(\'startDate\')||\'%y-%M-%d\'}'});" />
-						</p>
+						</p>--%>
 					</c:if>
 					
 					<c:if test="${dto.type==7 }">
@@ -467,7 +467,7 @@
 						</p>
 					</c:if>
 
-					<c:if test="${dto.type!=4 && dto.type!=5 && dto.type!=7 && dto.type!=8 && dto.type!=9 && dto.type!=6}">
+					<c:if test="${dto.type!=4 && dto.type!=5 && dto.type!=7 && dto.type!=9 && dto.type!=6}">
 						<table id="purposeTbale"
 							style="margin-left: 50px; margin-top: 20px;">
 							<tr style="background-color: gray">
@@ -511,28 +511,7 @@
 							</tr>
 						</table>
 					</c:if>
-					<c:if test="${dto.type==8}">
-						<table id="purposeTbale"
-							style="margin-left: 50px; margin-top: 20px;">
-							<tr style="background-color: gray">
-								<td style="display: block; float: left; width: 120px;">添加照片<b><font
-										class="ff6600">*</font></b></td>
-								<td><input type="file" name="img" value="${dto.image1 }"
-									class="doc" /></td>
-								<td><a href="###" class="button_02"
-									onclick="addRow('purposeTbale',-1,'tempRow')">+</a><label>&nbsp;&nbsp;上传图片尺寸:121*75</label></td>
-							</tr>
-						</table>
-						<table style="display: none; margin-left: 50px; margin-top: 10px;">
-							<tr id="tempRow">
-								<td style="display: block; float: left; width: 120px;">添加照片<b><font
-										class="ff6600">*</font></b></td>
-								<td><input type="file" name="img" value="" class="doc" /></td>
-								<td><a href="###" class="button_02"
-									onclick="delRow(this,'purposeTbale');">-</a></td>
-							</tr>
-						</table>
-					</c:if>
+					
 					<c:if test="${dto.type!=4 && dto.type!=5 && dto.type!=7 && dto.type!=9}">
 						<div class="table01">
 							<a href="###" onclick="checkFileExt()" class="gray"><fmt:message

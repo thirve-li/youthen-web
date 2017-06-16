@@ -53,15 +53,17 @@
 									onclick="setMainWorkSpace('${path}/lj-notice/list.action?dto.type=1')">活动管理</a>
 
 								<a href="#"
-									onclick="setMainWorkSpace('${path}/lj-notice/list.action?dto.type=6')">推荐活动管理</a>
+									onclick="setMainWorkSpace('${path}/lj-notice/list.action?dto.type=6')">焦点图管理</a>
 
-								<a href="#"
-									onclick="setMainWorkSpace('${path}/lj-comment/list.action?dto.type=0')">活动评论</a>
+								<%-- <a href="#"
+									onclick="setMainWorkSpace('${path}/lj-comment/list.action?dto.type=0')">活动评论</a> --%>
 
 								<a href="#"
 									onclick="setMainWorkSpace('${path}/lj-notice/list.action?dto.type=7')">滚动通知管理</a>
 								<a href="#"
 									onclick="setMainWorkSpace('${path}/lj-notice/list.action?dto.type=8')">社区资讯管理</a>
+									<a href="#"
+									onclick="setMainWorkSpace('${path}/lj-notice/list.action?dto.type=5')">关于我们管理</a>
 								<%-- <a href="#"
 									onclick="setMainWorkSpace('${path}/lj-notice/list.action?dto.type=9')">推送消息管理</a> --%>
 							</div>
@@ -84,8 +86,8 @@
 							<div class="list-item none">
 								<a href="#"
 									onclick="setMainWorkSpace('${path}/lj-feeHistory/list.action')">缴费历史列表</a>
-								<a href="#"
-									onclick="setMainWorkSpace('${path}/lj-feeHistory/urgedPayMoneyList.action')">欠费情况查看</a>
+								<%-- <a href="#"
+									onclick="setMainWorkSpace('${path}/lj-feeHistory/urgedPayMoneyList.action')">欠费情况查看</a> --%>
 							</div>
 						</li>
 						<li>
@@ -154,7 +156,7 @@
 									onclick="setMainWorkSpace('${path}/lj-cuponPlan/list.action?dto.payType=2')">商品折扣计划</a>
 							</div>
 						</li> --%>
-						<li>
+						<%-- <li>
 							<h4 class="M10">
 								<span></span>关于我们
 							</h4>
@@ -162,13 +164,13 @@
 								<a href="#"
 									onclick="setMainWorkSpace('${path}/lj-notice/list.action?dto.type=5')">关于我们详细</a>
 							</div>
-						</li>
-						<li>
+						</li> --%>
+						<%-- <li>
 							<h4 class="M11">
 								<span></span><a href="#"
 									onclick="setMainWorkSpace('${path}/lj-setting/entityInit.action?dto.type=SYS_CONFIG')">系统设置</a>
 							</h4>
-						</li>
+						</li> --%>
 					</ul>
 				</div>
 				<div class="m-right">
@@ -180,7 +182,7 @@
 			<sec:authorize ifAnyGranted="ADMIN,OA_DEPT_MGR">
 			<script>
 			    	navList(12);
-					$("#mainWorkSpace")[0].src = "${path}/lj-repair/list.action?dto.type=0";
+					$("#mainWorkSpace")[0].src = "${path}/lj-notice/list.action?dto.type=0";
 
 					function setMainWorkSpace(url) {
 

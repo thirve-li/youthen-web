@@ -77,7 +77,7 @@
 
     <bean id="successHandler" class="com.youthen.master.presentation.filter.MasterAuthenticationSuccessHandler">
         <property name="defaultTargetUrl" value="/lj-admin/index.action" />
-       <property name="passChangeRedirectUrl" value="/lj-admin/index.action" />
+       <property name="passChangeRedirectUrl" value="/mst-user/changePwdInit.action" />
        <!--  <property name="requestCache" ref="requestNotAjaxCache" /> -->
     </bean>
 

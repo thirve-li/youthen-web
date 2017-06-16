@@ -144,7 +144,7 @@ var complaints = function() {
                     $(".mask1").click(function() {
                         $(".mask1").hide();
                     });
-                    if (result.resultObject.status == 4 || result.resultObject.status == 3 || result.resultObject.status == 0) {
+                    if (result.resultObject.status == 4 || result.resultObject.status == 3 || result.resultObject.status == 0 || result.resultObject.status == 1) {
                         $("#cancel").remove();
                         //只展示禁止点击
                         $(".evaluate").attr("onselectstart", "return false");
@@ -220,7 +220,7 @@ var complaints = function() {
                     return "已投诉";
                     break;
                 case 1:
-                    return "处理中";
+                    return "受理中";
                     break;
                 case 2:
                     return "已处理";
@@ -328,9 +328,9 @@ var complaints = function() {
 
                         }
                     });
-                    if (statusNum == 1) {
+                    /*if (statusNum == 1) {
                         $('.choose').removeAttr('href'); //去掉a标签中的href属性
-                    }
+                    }*/
                 } else {
                     $(".nullimg").show();
                 }
@@ -356,7 +356,7 @@ var complaints = function() {
                 str = "已投诉";
                 break;
             case 1:
-                str = "处理中";
+                str = "受理中";
                 break;
             case 2:
                 str = "已处理";
