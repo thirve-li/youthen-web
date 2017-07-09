@@ -737,6 +737,7 @@ function preCheck(formId) {
             value = $(this).val();
         }
         
+        
         if("select-one" == type){
         	 value =$("#"+id).val();
         }
