@@ -4,9 +4,9 @@ window.onresize = function() {
     document.getElementById("mobileHtml").style.fontSize = document.body.clientWidth / 3.2 + "px";
 };
 //图片路径
-var imgdomain = "http://localhost:8080/youthen-web/";
+var imgdomain = "http://www.elinnuan.com/youthen-web/";
 //接口api
-var interfaceApi = "http://localhost:8080/youthen-web/phoneInterface.do";
+var interfaceApi = "http://www.elinnuan.com/youthen-web/phoneInterface.do";
 var managerMemory = "ManagerMemory";
 //默认图片
 var nullImage = "Assets/Images/Null.png";
@@ -721,7 +721,7 @@ function preCheck(formId) {
         if (type == undefined) {
             type = this.type;
         }
-
+        
         if (type == "hidden" || $(this).attr("disabled") == "disabled" || $(this).attr("disabled") == "true") {
             return true;
         }
@@ -735,6 +735,24 @@ function preCheck(formId) {
 
         if (type == "text" || type == "date" || type == "textarea" || type=="password") {
             value = $(this).val();
+        }
+        
+        if("select-one" == type){
+        	 value =$("#"+id).val();
+        }
+        
+        if(value==""){
+        	$(this).css({
+                color: 'red'
+            });
+            getBomBbox("亲~请输入"+label);
+            checkUnNull = false;
+            return false;
+        }else {
+            $(this).css({
+                color: 'black'
+            });
+
         }
         if (type == "text" || type == "date") {
             if (value.indexOf("\"") > 0 || value.indexOf("{") > 0 || value.indexOf("}") > 0 || value.indexOf("[") > 0 || value.indexOf("]") > 0 || value.indexOf("(⊙o⊙)哦") > 0 || value.indexOf("<") > 0 || value.indexOf(">") > 0 || value.indexOf("$") > 0 || value.indexOf("#") > 0 || value.indexOf("&") > 0 || value.indexOf("(") > 0 || value.indexOf(")") > 0 || value.indexOf("【") > 0 || value.indexOf("】") > 0) {

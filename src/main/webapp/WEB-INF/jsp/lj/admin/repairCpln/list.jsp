@@ -133,6 +133,7 @@
 					<c:if test="${dto.type==0 }">
 						<th>报修物品</th>
 						<th>报修地址</th>
+						<th>上门时间</th>
 						<th>报修状态</th>
 						<th>报修时间</th>
 					</c:if>
@@ -153,6 +154,7 @@
 						<td>${repair.title }</td>
 						<c:if test="${dto.type==0 }">
 							<td>${repair.roomCode }</td>
+							<td>${repair.serviceTime }</td>
 							<td>
 							  <c:if test="${repair.status == '0'}">已报修</c:if>
 							 <c:if test="${repair.status == '1'}">已受理</c:if>  

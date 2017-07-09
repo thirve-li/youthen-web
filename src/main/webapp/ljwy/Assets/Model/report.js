@@ -98,6 +98,7 @@
             $("#sub").attr("ontouchstart", "return false");
                 if(checkUnNull==true){
                 var roomCode= $(".choose a.cur").attr("roomCode");
+                var serviceTime=$("#serviceTime").val();
                 var paramsJson = {
                     mobile: JSON.parse(eval($.cookie(managerMemory))).mobile,
                     repairObject: $("#repairObject").val(),
@@ -105,6 +106,7 @@
                     nickName: $("#contacter").val(),
                     title: $("#repairObject").val(),
                     roomCode: roomCode,
+                    serviceTime: serviceTime,
                     content: $("#content").val(),
                     images: [],
                     type: "0",
