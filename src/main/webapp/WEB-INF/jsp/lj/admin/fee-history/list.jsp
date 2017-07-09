@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
+<meta http-equiv="refresh" content="3">
 <!–[if lte IE 8]>
 <meta http-equiv=”x-ua-compatible” content=”ie=7″ />
 <![endif]–>
