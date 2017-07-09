@@ -145,7 +145,7 @@ var singer = function () {
             }
 
        
-        $(".submit").on("click", function () {
+        $("#submitBtn").on("click", function () {
             preCheck("formInfo");
             checkFormChange("formInfo");
             if(checkUnNull==true && checkForm==true){
