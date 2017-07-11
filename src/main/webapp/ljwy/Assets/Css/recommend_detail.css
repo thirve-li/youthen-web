@@ -10,6 +10,6 @@ body{background-color:#ededed;}
 .title p:last-child{font-size:.11rem; color:#c0c0c0;}
 
 .list{background-color: white; margin-top: .01rem;}
-.banner p{width:3.20rem; text-align:justify; font-size:.15rem;}
+.banner p{margin:.15rem .15rem .15rem .15rem; width:2.95rem; text-align:justify; font-size:.15rem;}
 .banner p img{width:100%;}
 .name p{ font-size:.11rem; text-align:right; margin-top:.15rem;}
