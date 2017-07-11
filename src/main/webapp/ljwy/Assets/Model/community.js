@@ -110,7 +110,7 @@
                     $('<div class"list"><div class="title"><p>' + result.resultObject.name + '</p><p>发布时间：' + datetimeToString(datetime, "yyyy") + '年' + datetimeToString(datetime, "MM") + '月' + datetimeToString(datetime, "dd") + '日</p></div><div class="banner"><p>' + result.resultObject.theContent + '</p></div><div class="name"><p>发表人：' + result.resultObject.createrNickName + '</p></div><div>').appendTo(".list");
                 }
                 else {
-                    $('<div class"list"><div class="title"><p>' + result.resultObject.name + '</p><p>发布时间：' + datetimeToString(datetime, "yyyy") + '年' + datetimeToString(datetime, "MM") + '月' + datetimeToString(datetime, "dd") + '日</p></div><div class="banner"><a><img src="' + imgdomain + result.resultObject.image1 + '" id="img"/></a><p>' + result.resultObject.theContent + '</p></div><div class="name"><p>发表人：' + result.resultObject.createrNickName + '</p></div><div>').appendTo(".list");
+                    $('<div class"list"><div class="title"><p>' + result.resultObject.name + '</p><p>发布时间：' + datetimeToString(datetime, "yyyy") + '年' + datetimeToString(datetime, "MM") + '月' + datetimeToString(datetime, "dd") + '日</p></div><div class="banner"><p>' + result.resultObject.theContent + '</p></div><div class="name"><p>发表人：' + result.resultObject.createrNickName + '</p></div><div>').appendTo(".list");
                 }
         }
             else {
