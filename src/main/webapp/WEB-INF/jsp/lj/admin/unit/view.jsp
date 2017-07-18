@@ -43,6 +43,10 @@
 					<label>${dto.code }</label>
 				</p>
 				<p style="margin-left: 50px; margin-top: 20px;">
+					<label style="display: block; float: left; width: 120px;">最后缴费期数：</label>
+					<label>${dto.lastPeriod }</label>
+				</p>
+				<p style="margin-left: 50px; margin-top: 20px;">
 					<label style="display: block; float: left; width: 120px;">建筑面积：</label>
 					<label>${dto.measureOfArea}</label>
 				</p>

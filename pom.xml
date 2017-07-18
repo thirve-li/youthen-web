@@ -240,6 +240,12 @@
 			<artifactId>youthen-lj</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+		
+		<dependency>
+			<groupId>com.youthen</groupId>
+			<artifactId>youthen-oa</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 
 		<!-- J2EE容器所需包 -->
 		<dependency>

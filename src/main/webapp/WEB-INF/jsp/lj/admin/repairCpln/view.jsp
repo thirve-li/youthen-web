@@ -54,6 +54,10 @@
 					<label>${dto.roomCode }</label>
 				</p>
 				<p style="margin-left: 50px; margin-top: 20px;">
+					<label style="display: block; float: left; width: 120px;">上门时间</label>
+					<label>${dto.serviceTime }</label>
+				</p>
+				<p style="margin-left: 50px; margin-top: 20px;">
 					<label style="display: block; float: left; width: 120px;">联系人电话</label>
 					<label>${dto.reporterId }</label>
 				</p>

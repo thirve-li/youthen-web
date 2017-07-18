@@ -92,6 +92,21 @@
 								maxlength="15" value="${dto.code }" labelTxt="室号"
 													require="true"/>
 						</p>
+						
+						<p style="margin-left: 50px; margin-top: 20px;">
+							<label style="display: block; float: left; width: 120px;">
+								最后缴费期数:<b><font class="ff6600">*</font></b>
+							</label>
+						 
+						   <input id="startDate" require="true"
+								name="dto.lastPeriod" val
+								value="${dto.lastPeriod }"
+								type="text" labelTxt="最后缴费期数" class="inputDate"
+								style="width: 150px;"
+								onfocus="WdatePicker({dateFmt:'yyyyMM'});" />
+						</p>
+						
+						
 						<p style="margin-left: 50px; margin-top: 20px;">
 							<label style="display: block; float: left; width: 120px;">建筑面积:<b><font
 									class="ff6600">*</font></b></label>

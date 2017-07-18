@@ -81,6 +81,7 @@
 							<th>建筑面积</th>
 							<th>物业费(元/平米)</th>
 							<th>物业费(元/月)</th>
+							<th>最后缴费期数</th>
 							<th>操作<a title="新增"
 								href="${path}/lj-room/entityInit.action"><img
 									src="${path}/mst-images/add.png" style="width: 10px;" /></a></th>
@@ -92,6 +93,7 @@
 								<td>${room.measureOfArea }</td>
 								<td>${room.priceSquareMeter }</td>
 								<td>${room.totalPrice }</td>
+								<td>${room.lastPeriod }</td>
 								<td><a
 									href="${path}/lj-room/view.action?dto.id=${room.id}">查看</a>
 										<a

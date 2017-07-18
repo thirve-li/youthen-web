@@ -72,6 +72,7 @@ var payCost = function() {
                         if (i == 0) {
                             $('<p period="' + item.lastPeriod + '" price="' + item.price + '"><span class="choose_show"><img src="Assets/Images/choose_bg.png"/></span><span class="type" cur="1" roomcode="' + item.roomCode + '">' + item.roomCode.split("-")[1] + "号" + item.roomCode.split("-")[2] + '室</span></p>').appendTo(".place");
                             $(".money_flg .money").text(item.price);
+                            $("#lastPeriod").text(item.lastPeriod);
                         } else if (i != 0) {
                             $('<p period="' + item.lastPeriod + '" price="' + item.price + '"><span class="choose_show"><img src="Assets/Images/choose.png"/></span><span class="type" cur="0" roomcode="' + item.roomCode + '">' + item.roomCode.split("-")[1] + "号" + item.roomCode.split("-")[2] + '室</span></p>').appendTo(".place");
                         }
