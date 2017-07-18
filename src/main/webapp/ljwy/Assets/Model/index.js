@@ -12,7 +12,7 @@ var index=function(){
             var result = JSON.parse(result);
             if (result.messageCode == 1) {
                 $.each(result.resultObject.resultObject, function (i, item) {
-					$("<div class=\"swiper-slide img1\">"
+					/*$("<div class=\"swiper-slide img1\">"
 							+"<a href=\"recommend_detail.html?id="+item.id+"\">"
 								+"<img src=\'"+ imgdomain + item.image1 + "' />"
 							+"</a>"
@@ -36,6 +36,22 @@ var index=function(){
 							+"<a href=\"recommend_detail.html?id="+item.id+"\">"
 								+"<img src=\'"+ imgdomain + item.image5 + "' />"
 							+"</a>"
+						+"</div>").appendTo(".swiper-wrapper");*/
+                	
+                	$("<div class=\"swiper-slide img1\">"
+								+"<img src=\'"+ imgdomain + item.image1 + "' />"
+						+"</div>"+
+						"<div class=\"swiper-slide img2\">"
+								+"<img src=\'"+ imgdomain + item.image2 + "' />"
+						+"</div>"+
+						"<div class=\"swiper-slide img3\">"
+								+"<img src=\'"+ imgdomain + item.image3 + "' />"
+						+"</div>"+
+						"<div class=\"swiper-slide img4\">"
+								+"<img src=\'"+ imgdomain + item.image4 + "' />"
+						+"</div>"+
+						"<div class=\"swiper-slide img5\">"
+								+"<img src=\'"+ imgdomain + item.image5 + "' />"
 						+"</div>").appendTo(".swiper-wrapper");
 						if(item.image1==""){$(".img1").remove();}
 						if(item.image2==""){$(".img2").remove();}
