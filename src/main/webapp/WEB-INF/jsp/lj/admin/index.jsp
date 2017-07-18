@@ -46,6 +46,7 @@
 							<h4 class="M1">
 								<span></span>社区公告和活动
 							</h4>
+							 
 							<div class="list-item none">
 								<a href="#"
 									onclick="setMainWorkSpace('${path}/lj-notice/list.action?dto.type=0')">公告管理</a>
@@ -53,7 +54,10 @@
 									onclick="setMainWorkSpace('${path}/lj-notice/list.action?dto.type=1')">活动管理</a>
 
 								<a href="#"
-									onclick="setMainWorkSpace('${path}/lj-notice/list.action?dto.type=6')">焦点图管理</a>
+									onclick="setMainWorkSpace('${path}/lj-notice/list.action?dto.type=2')">焦点图管理</a>
+									
+								<a href="#"
+									onclick="setMainWorkSpace('${path}/lj-notice/list.action?dto.type=6')">推荐活动</a>
 
 								<%-- <a href="#"
 									onclick="setMainWorkSpace('${path}/lj-comment/list.action?dto.type=0')">活动评论</a> --%>
