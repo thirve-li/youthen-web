@@ -73,7 +73,7 @@ function urgedPayMoney() {
 							<c:if test="${dto.type== 1 }"> selected </c:if>>停车费</option>
 					</select>&nbsp;&nbsp;&nbsp; <input type="submit" value="查询" />
 					<input type="button"  onclick="urgedPayMoney()" value="一键催缴" />
-					<input type="button"  onclick="window.open('${path}/lj-feeHistory/export2Csv.action','_Blank');" value="下载" />
+					<input type="button"  onclick="window.open('${path}/lj-feeHistory/export2Csv.action');" value="下载" />
 					 
 				</p>
 			</form>
