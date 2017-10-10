@@ -44,7 +44,7 @@
 				<c:if test="${dto.type==2 }">
 					<li>园区社交</li>
 					<li>></li>
-					<li>话题管理</li>
+					<li>焦点图管理</li>
 				</c:if>
 				<c:if test="${dto.type==3 }">
 					<li>园区社交</li>
@@ -100,7 +100,7 @@
 						活动名：
 					</c:if>
 							<c:if test="${dto.type==2 }">
-						话题名：
+						焦点图名：
 					</c:if>
 							<c:if test="${dto.type==3 }">
 						个人活动名：
@@ -123,9 +123,8 @@
 					<c:if test="${dto.type==9 }">
 						推送标题:
 					</c:if>
-					<c:if test="${dto.type!=9 }">
-							
-						
+					<input name="dto.name" id="name" type="text" style="width: 180px;" value="${dto.name}" />&nbsp;&nbsp;&nbsp;
+					 
 							状态 <select name="dto.status" id="status" class="select_01"
 								style="width: 100px;">
 								<option value=""
@@ -134,14 +133,12 @@
 									<c:if test="${dto.status == 0 }"> selected </c:if>>失效</option>
 								<option value="1"
 									<c:if test="${dto.status == 1 }"> selected </c:if>>有效</option>
-							</c:if>
-							<c:if test="${dto.type==9 }">
-							<input name="dto.name" id="name" type="text"
-								style="width: 180px;" value="${dto.name}" />&nbsp;&nbsp;&nbsp;
-							推送内容:<input name="dto.theContent" id="theContent" type="text"
+							 </select> &nbsp;&nbsp;&nbsp; 
+					 
+				          内容:<input name="dto.theContent" id="theContent" type="text"
 								style="width: 180px;" value="${dto.theContent}" />&nbsp;&nbsp;&nbsp;
-							</c:if>
-							</select> &nbsp;&nbsp;&nbsp; <a id="gotoPage" href="#"
+					 
+							 <a id="gotoPage" href="#"
 								onclick="doSearch(1)" class="button_01">查询</a>
 					</form>
 
@@ -234,7 +231,7 @@
 					<table
 						style="margin-left: 25px; margin-top: 10px; border: 1px solid #808080; width: 96%; text-align: center;">
 						<tr>
-							<th>话题名</th>
+							<th>焦点图名</th>
 							<th>发布时间</th>
 							<th>状态</th>
 							<th>操作<%-- <a title="新增"
