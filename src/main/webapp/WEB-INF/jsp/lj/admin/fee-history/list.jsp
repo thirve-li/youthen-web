@@ -56,7 +56,7 @@ function urgedPayMoney() {
 			<form name="pageForm" id="pageForm"
 				action="${path}/lj-feeHistory/list.action" method="post">
 				<s:hidden name="dto.gotoPage" id="gotoPage" theme="simple" />
-				<s:hidden name="dto.status"/>
+				 
 				<p style="margin-left: 25px; margin-top: 10px;">
 					用户姓名：<input name="dto.userName" id="userName" type="text"
 						style="width: 90px;" value="${dto.userName}" />&nbsp;&nbsp;&nbsp;
