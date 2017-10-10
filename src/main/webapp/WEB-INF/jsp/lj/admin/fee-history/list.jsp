@@ -71,7 +71,17 @@ function urgedPayMoney() {
 							<c:if test="${dto.type== 0 }"> selected </c:if>>物业费</option>
 						<option value="1"
 							<c:if test="${dto.type== 1 }"> selected </c:if>>停车费</option>
-					</select>&nbsp;&nbsp;&nbsp; <input type="submit" value="查询" />
+					</select>&nbsp;&nbsp;&nbsp; 
+					
+					支付状态：<select name="dto.stauts" id="status" class="select_01">
+						<option value="">请选择</option>
+						<option value="0"
+							<c:if test="${dto.status== 0 }"> selected </c:if>>未支付</option>
+						<option value="1"
+							<c:if test="${dto.status== 1 }"> selected </c:if>>已支付</option>
+					</select>&nbsp;&nbsp;&nbsp;
+					
+					<input type="submit" value="查询" />
 					<input type="button"  onclick="urgedPayMoney()" value="一键催缴" />
 					<input type="button"  onclick="window.open('${path}/lj-feeHistory/export2Csv.action');" value="下载" />
 					 
