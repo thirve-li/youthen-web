@@ -88,6 +88,7 @@ function urgedPayMoney() {
 					<th>缴费日期</th>
 					<th>缴费月数</th>
 					<th>缴费金额</th>
+					<th>支付状态</th>
 					<th>操作 <%-- <a title="新增"
 						href="${path}/lj-feeHistory/entityInit.action"><img
 							src="${path}/mst-images/add.png" /></a> --%>
@@ -109,6 +110,7 @@ function urgedPayMoney() {
 						<td><s:date name="payDate" format="yyyy-MM-dd" /></td>
 						<td><s:property value="feeMonth" /></td>
 						<td><s:property value="fee" /></td>
+						<td> <s:if test="status==0 ">未支付</s:if> <s:if test="status==1 ">已支付</s:if></td>
 						<td><a
 							href="${path}/lj-feeHistory/view.action?dto.id=<s:property value="id" />">查看</a>
 							<%-- <a
