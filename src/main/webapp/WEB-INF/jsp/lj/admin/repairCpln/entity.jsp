@@ -192,6 +192,15 @@
 								labelTxt="报修概述">${dto.theContent} </textarea>
 
 						</p>
+						
+						<p style="margin-left: 50px; margin-top: 20px;">
+							<label style="display: block; float: left; width: 120px;">处理人<b><font
+									class="ff6600">*</font></b></label>
+								<s:textfield name="dto.repairMan" cssClass="input_04"
+								theme="simple" labelTxt="处理人" require="true" id="contacterTel"
+								format="mobile"></s:textfield>
+
+						</p>
 						<%-- <c:if test="${dto.id!=null}">
 							<p style="margin-left: 50px; margin-top: 20px;">
 								<label style="display: block; float: left; width: 120px;">报修状态<b><font

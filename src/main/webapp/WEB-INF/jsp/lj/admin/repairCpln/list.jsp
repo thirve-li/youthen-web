@@ -135,7 +135,9 @@
 						<th>报修地址</th>
 						<th>上门时间</th>
 						<th>报修状态</th>
-						<th>报修时间</th>
+						<th>报修时间</th> 
+						<th>处理人</th>
+						repairMan
 					</c:if>
 					<c:if test="${dto.type==1 }">
 						<th>投诉标题</th>
@@ -175,7 +177,9 @@
 						</c:if>
 						<td><fmt:formatDate value="${repair.reportTime }"
 								pattern="yyyy-MM-dd HH:mm:ss" /></td>
+						<td>${repair.repairMan }</td>
 						<td><fmt:formatDate value="${repair.finishTime}" pattern="yyyy-MM-dd HH:mm:ss" /></td>
+						
 						<td><a href="${path}/lj-repair/view.action?dto.id=${repair.id}&dto.type=${dto.type}">查看</a>
 						<%-- <c:if test="${repair.status==2 || repair.status==4}">
 							<a href="javascript:del(${repair.id})">删除</a>

@@ -78,6 +78,10 @@
 							<c:if test="${dto.status == '4'}">已评价</c:if>
 					</label>
 				</p>
+				<p style="margin-left: 50px; margin-top: 20px;">
+					<label style="display: block; float: left; width: 120px;">处理人</label>
+					<label>${dto.repairMan}</label>
+				</p>
 			</c:if>
 			<c:if test="${dto.type==1 }">
 				<p style="margin-left: 50px; margin-top: 20px;">
