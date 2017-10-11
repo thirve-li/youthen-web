@@ -177,9 +177,9 @@
 								pattern="yyyy-MM-dd HH:mm:ss" /></td>
 						<td><fmt:formatDate value="${repair.finishTime}" pattern="yyyy-MM-dd HH:mm:ss" /></td>
 						<td><a href="${path}/lj-repair/view.action?dto.id=${repair.id}&dto.type=${dto.type}">查看</a>
-						<c:if test="${repair.status==2 || repair.status==4}">
+						<%-- <c:if test="${repair.status==2 || repair.status==4}">
 							<a href="javascript:del(${repair.id})">删除</a>
-						</c:if>
+						</c:if> --%>
 							<%-- 
 							<c:if test="${repair.status!=2&&repair.status!=3 }">
 								<a href="${path}/lj-repair/entityInit.action?dto.id=${repair.id}&dto.type=${dto.type}">修改</a>
