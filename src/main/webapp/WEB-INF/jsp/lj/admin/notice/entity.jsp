@@ -131,9 +131,9 @@
 					<li>活动管理</li>
 				</c:if>
 				<c:if test="${dto.type==2 }">
-					<li>园区社交</li>
+					<li>社区公告</li>
 					<li>></li>
-					<li>话题管理</li>
+					<li>焦点图</li>
 				</c:if>
 				<c:if test="${dto.type==3 }">
 					<li>园区社交</li>
@@ -266,25 +266,11 @@
 					<c:if test="${dto.type==2 }">
 						<p style="margin-left: 50px; margin-top: 20px;">
 							<label
-								style="display: block; float: left; width: 120px; margin-top: 5px">个人话题名:<b><font
+								style="display: block; float: left; width: 120px; margin-top: 5px">焦点图名:<b><font
 									class="ff6600">*</font></b></label>
 							<s:textfield name="dto.name" cssClass="input_04" theme="simple"
-								labelTxt="个人话题名" require="true"></s:textfield>
-						</p>
-						<p style="margin-left: 50px; margin-top: 20px;">个人话题内容：</p>
-						<script type="text/javascript">
-							var editor = UE.getEditor('theContent', {
-								//默认编辑器的高度
-								initialFrameHeight : 280
-							});
-						</script>
-						<p style="margin-left: 50px; margin-top: 20px;">
-							<label
-								style="display: block; float: left; width: 120px; margin-top: 5px">个人话题内容:<b><font
-									class="ff6600">*</font></b></label>
-							<textarea id="theContent" name="dto.theContent"
-								style="width: 700px; height: 200px;">${dto.theContent} </textarea>
-						</p>
+								labelTxt="焦点图名" require="true"></s:textfield>
+						</p> 
 					</c:if>
 
 					<c:if test="${dto.type==3 }">
@@ -361,10 +347,10 @@
 					<c:if test="${dto.type==6 }">
 						<p style="margin-left: 50px; margin-top: 20px;">
 							<label
-								style="display: block; float: left; width: 120px; margin-top: 5px">焦点图名称:<b><font
+								style="display: block; float: left; width: 120px; margin-top: 5px">推荐活动名称:<b><font
 									class="ff6600">*</font></b></label>
 							<s:textfield name="dto.name" cssClass="input_04" theme="simple"
-								labelTxt="焦点图名称" require="true"></s:textfield>
+								labelTxt="推荐活动名称" require="true"></s:textfield>
 						</p>
 
 						<p style="margin-left: 50px; margin-top: 20px;">
@@ -474,9 +460,13 @@
 								<td style="display: block; float: left; width: 120px;">添加照片<b><font
 										class="ff6600">*</font></b></td>
 								<td><input type="file" name="img" value="${dto.image1 }"
-									class="doc" /></td>
-								<td><a href="###" class="button_02"
-									onclick="addRow('purposeTbale',-1,'tempRow')">+</a><label>&nbsp;&nbsp;上传图片尺寸:400*300</label></td>
+									class="doc" require="true" /></td>
+								<td>
+								 <c:if test="${dto.type!=2}">
+								   <a href="###" class="button_02"
+									onclick="addRow('purposeTbale',-1,'tempRow')">+</a><label>&nbsp;&nbsp;上传图片尺寸:400*300</label>
+							     </c:if>
+							   </td>
 							</tr>
 						</table>
 						<table style="display: none; margin-left: 50px; margin-top: 10px;">

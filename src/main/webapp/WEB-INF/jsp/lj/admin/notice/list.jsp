@@ -234,9 +234,9 @@
 							<th>焦点图名</th>
 							<th>发布时间</th>
 							<th>状态</th>
-							<th>操作<%-- <a title="新增"
+							<th>操作<a title="新增"
 								href="${path}/lj-notice/entityInit.action?dto.type=${dto.type}"><img
-									src="${path}/mst-images/add.png" style="width: 10px;" /></a> --%></th>
+									src="${path}/mst-images/add.png" style="width: 10px;" /></a></th>
 						</tr>
 						<c:forEach items="${dtoList }" var="notice">
 							<tr>
@@ -255,7 +255,7 @@
 										<a href="${path}/lj-notice/entityInit.action?dto.id=${notice.id}&dto.type=${dto.type}">修改</a> --%>
 										<a href="${path }/lj-notice/delete.action?dto.id=${notice.id}&dto.type=${dto.type}">失效</a>
 									</c:if>
-									 <a href="${path}/lj-comment/toViewComments.action?dto.actionId=${notice.id}&dto.type=0&url=${path}/lj-notice/list.action?dto.type=2">查看评论</a></td>
+									 <%-- <a href="${path}/lj-comment/toViewComments.action?dto.actionId=${notice.id}&dto.type=0&url=${path}/lj-notice/list.action?dto.type=2">查看评论</a> --%></td>
 							</tr>
 						</c:forEach>
 					</table>

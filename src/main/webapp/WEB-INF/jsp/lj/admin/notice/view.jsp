@@ -139,13 +139,13 @@
 			</c:if>
 			<c:if test="${dto.type==2 }">
 				<p style="margin-left: 50px; margin-top: 20px;">
-					<label style="display: block; float: left; width: 120px;">话题名：</label>
+					<label style="display: block; float: left; width: 120px;">焦点图名：</label>
 					<label>${dto.name }</label>
 				</p>
-				<p style="margin-left: 50px; margin-top: 20px;">
+				<%-- <p style="margin-left: 50px; margin-top: 20px;">
 					<label style="display: block; float: left; width: 120px;">话题内容：</label>
 					<label>${dto.theContent}</label>
-				</p>
+				</p> --%>
 				<p style="margin-left: 50px; margin-top: 20px;">
 					<label style="display: block; float: left; width: 120px;">创建时间</label>
 					<label><s:date name="dto.createTime"
@@ -154,7 +154,7 @@
 				<p style="margin-left: 50px; margin-top: 20px;">
 					<label style="display: block; float: left; width: 120px;">图片详情</label>
 					<label><c:forEach items="${noticeNameList }" var="images">
-							<img src="${path}/${images}" width="80" height="80" />
+							<img src="${path}/${images}"  />
 						</c:forEach> </label>
 				</p>
 			</c:if>
