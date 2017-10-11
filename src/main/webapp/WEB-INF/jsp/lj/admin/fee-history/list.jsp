@@ -73,7 +73,7 @@ function urgedPayMoney() {
 							<c:if test="${dto.type== 1 }"> selected </c:if>>停车费</option>
 					</select>&nbsp;&nbsp;&nbsp; 
 					
-					支付状态：<select name="dto.stauts" id="status" class="select_01">
+					支付状态：<select name="dto.status" id="status" class="select_01">
 						<option value="">请选择</option>
 						<option value="0"
 							<c:if test="${dto.status== 0 }"> selected </c:if>>未支付</option>
