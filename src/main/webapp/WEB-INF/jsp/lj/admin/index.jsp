@@ -154,7 +154,7 @@
 							</h4>
 							<div class="list-item none">
 							    <a href="#" onclick="setMainWorkSpace('${path}/lj-admin/listUser.action')">注册用户</a>
-								<a href="#" onclick="setMainWorkSpace('${path}/lj-admin/listAdmin.action')">黄页</a>
+								<a href="#" onclick="setMainWorkSpace('${path}/lj-admin/listAdmin.action')">后台管理员</a>
 							</div>
 						</li>
 						
