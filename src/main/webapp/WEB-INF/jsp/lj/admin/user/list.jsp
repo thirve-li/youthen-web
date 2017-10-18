@@ -1,5 +1,6 @@
 <%@ page language="java" pageEncoding="utf-8"%>
 <%@ include file="/WEB-INF/include/inc.jsp"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 
@@ -91,15 +92,15 @@
 				<div class="fy" style="width: 82%; margin-top: 10px">
 					<p>
 						第
-						<s:property value="userDto.gotoPage" />
+						${userDto.gotoPage}
 						页 , 共
-						<s:property value="userDto.pages" />
+						${userDto.pages}
 						页 , 共
 						<s:property value="userDto.listSize" />
 						条 <a href="#" onclick="doSearch(1)" class="fy_left0"></a>
 						<s:if test="userDto.gotoPage-1 > 0 ">
 							<a href="#"
-								onclick="doSearch(<s:property value="userDto.gotoPage-1" />)"
+								onclick="doSearch(${userDto.gotoPage-1})"
 								class="fy_left"></a>
 						</s:if>
 						<s:else>
@@ -108,13 +109,13 @@
 
 						<s:if test="userDto.gotoPage+1 <= userDto.pages ">
 							<a href="#"
-								onclick="doSearch(<s:property value="userDto.gotoPage+1" />)"
+								onclick="doSearch(${userDto.gotoPage+1})"
 								class="fy_right"></a>
 						</s:if>
 						<s:else>
 							<a href="#" class="fy_right"></a>
 						</s:else>
-						<a href="#" onclick="doSearch(<s:property value="userDto.pages" />)"
+						<a href="#" onclick="doSearch(${userDto.pages})"
 							class="fy_right0"></a>
 					</p>
 				</div>
