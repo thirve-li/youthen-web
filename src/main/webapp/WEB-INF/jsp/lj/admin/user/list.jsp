@@ -70,7 +70,7 @@
 							<th>姓名</th>
 							<th>昵称</th>
 							<th>手机</th>
-							<th>email</th>
+							<th>性别</th>
 							<th>积分</th>
 							<th>操作 </th>
 						</tr>
@@ -79,7 +79,7 @@
 								<td>${user.name }</td>
 								<td>${user.nickName}&nbsp;</td>
 								<td>${user.mobile }&nbsp; </td>
-								<td>${user.email} &nbsp;</td>
+								<td>${user.sex} &nbsp;</td>
 								<td>${user.score} </td>
 								<td> </td>
 							</tr>
