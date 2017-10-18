@@ -241,11 +241,11 @@
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		
-		<dependency>
+		<!-- <dependency>
 			<groupId>com.youthen</groupId>
 			<artifactId>youthen-oa</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
+		</dependency> -->
 
 		<!-- J2EE容器所需包 -->
 		<dependency>
@@ -280,11 +280,11 @@
 			<version>1.6.12</version>
 		</dependency>
 		<!-- Oracle数据库驱动 -->
-		<dependency>
+		<!-- <dependency>
 			<groupId>com.oracle</groupId>
 			<artifactId>ojdbc14</artifactId>
 			<version>10.2.0.4.0</version>
-		</dependency>
+		</dependency> -->
 		<!-- c3p0数据库连接池 -->
 		<dependency>
 			<groupId>c3p0</groupId>
@@ -557,14 +557,6 @@
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi-ooxml-schemas</artifactId>
 			<version>3.7</version>
-		</dependency>
-
-		<!-- 容联发送短信 -->
-		<dependency>
-			<groupId>com.coolpen.sms</groupId>
-			<artifactId>ccp-sms</artifactId>
-			<version>v2.6.3r</version>
-			<scope>compile</scope>
 		</dependency>
 
 	</dependencies>
