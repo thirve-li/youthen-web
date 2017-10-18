@@ -24,7 +24,7 @@
 	<%@ include file="/WEB-INF/include/sysNavBar.jsp"%>
 	<DIV style="width: 1007px; margin: auto;">
 		<div class="auto">
-			<%@ include file="/WEB-INF/jsp/master/mst-include/head.jsp"%>
+			<%-- <%@ include file="/WEB-INF/jsp/master/mst-include/head.jsp"%> --%>
 			<div class="auto2">
 				<div class="nav">
 					<img src="${path}/images/topicon10.gif" />>><b><fmt:message
@@ -75,4 +75,4 @@
 	</DIV>
 </body>
 </html>
-<%@ include file="/WEB-INF/jsp/master/department/MAIN_JS.jsp"%>
+<%-- <%@ include file="/WEB-INF/jsp/master/department/MAIN_JS.jsp"%> --%>

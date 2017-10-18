@@ -147,6 +147,18 @@
 								<a href="#" onclick="setMainWorkSpace('${path}/lj-kuaidi/kuaiDiList.action?dto.type=EXPRESS_COMPANY')">快递公司</a>
 							</div>
 						</li>
+						
+						<li>
+							<h4 class="M8">
+								<span></span>用户管理
+							</h4>
+							<div class="list-item none">
+							    <a href="#" onclick="setMainWorkSpace('${path}/lj-admin/listUser.action')">注册用户</a>
+								<a href="#" onclick="setMainWorkSpace('${path}/lj-admin/listAdmin.action')">黄页</a>
+							</div>
+						</li>
+						
+						
 						<%-- <li>
 							<h4 class="M8">
 								<span></span>折扣计划
