@@ -40,11 +40,10 @@
 			<div class="glkList">
 				<div>
 					<form name="pageForm" id="pageForm" method="post" action="${path}/lj-admin/listUser.action">
-						<s:hidden name="dto.gotoPage" id="gotoPage" theme="simple" />
-						<s:hidden name="dto.type" />
+						<s:hidden name="userDto.gotoPage" id="gotoPage" theme="simple" />
 						<p style="margin-left: 25px; margin-top: 10px;">
 						姓名：
-						<input name="userDto.name" id="name" type="text" style="width: 180px;" value="${userDto.name}" />&nbsp;&nbsp;&nbsp;
+						<input name="userDto.name" id="name" type="text" style="wuserDtoh: 180px;" value="${userDto.name}" />&nbsp;&nbsp;&nbsp;
 							性别 <select name="userDto.sex" id="sex" class="select_01"
 								style="width: 100px;">
 								<option value=""
@@ -55,8 +54,8 @@
 									<c:if test="${userDto.sex == '女' }"> selected </c:if>>女</option>
 							 </select> &nbsp;&nbsp;&nbsp; 
 					 
-				          	内容:<input name="dto.theContent" id="theContent" type="text"
-								style="width: 180px;" value="${dto.theContent}" />&nbsp;&nbsp;&nbsp;
+				          	积分:<input name="userDto.score" id="score" type="text"
+								style="width: 180px;" value="${userDto.score}" />&nbsp;&nbsp;&nbsp;
 					 
 							 <a id="gotoPage" href="#"
 								onclick="doSearch(1)" class="button_01">查询</a>
@@ -92,30 +91,30 @@
 				<div class="fy" style="width: 82%; margin-top: 10px">
 					<p>
 						第
-						<s:property value="dto.gotoPage" />
+						<s:property value="userDto.gotoPage" />
 						页 , 共
-						<s:property value="dto.pages" />
+						<s:property value="userDto.pages" />
 						页 , 共
-						<s:property value="dto.listSize" />
+						<s:property value="userDto.listSize" />
 						条 <a href="#" onclick="doSearch(1)" class="fy_left0"></a>
-						<s:if test="dto.gotoPage-1 > 0 ">
+						<s:if test="userDto.gotoPage-1 > 0 ">
 							<a href="#"
-								onclick="doSearch(<s:property value="dto.gotoPage-1" />)"
+								onclick="doSearch(<s:property value="userDto.gotoPage-1" />)"
 								class="fy_left"></a>
 						</s:if>
 						<s:else>
 							<a href="#" class="fy_left"></a>
 						</s:else>
 
-						<s:if test="dto.gotoPage+1 <= dto.pages ">
+						<s:if test="userDto.gotoPage+1 <= userDto.pages ">
 							<a href="#"
-								onclick="doSearch(<s:property value="dto.gotoPage+1" />)"
+								onclick="doSearch(<s:property value="userDto.gotoPage+1" />)"
 								class="fy_right"></a>
 						</s:if>
 						<s:else>
 							<a href="#" class="fy_right"></a>
 						</s:else>
-						<a href="#" onclick="doSearch(<s:property value="dto.pages" />)"
+						<a href="#" onclick="doSearch(<s:property value="userDto.pages" />)"
 							class="fy_right0"></a>
 					</p>
 				</div>
